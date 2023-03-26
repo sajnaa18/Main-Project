@@ -112,7 +112,7 @@ void frameNode1()
   display.setTextSize(1); 
   display.setTextColor(BLACK,WHITE); 
   display.setCursor(15,3);
-  display.print("THIS NODE");
+  display.print("NODE 1");
   display.display();
 }
 void Screen1()
@@ -138,17 +138,17 @@ void Screen1()
   display.println("SoilMo : ");
   display.setCursor(65,42);
   display.println(soil1);
-  display.setCursor(90,42);
+  display.setCursor(80,42);
   display.println("ADC");
 
   display.setCursor(10,54);
   display.println("Status : ");
-  if(status3 == "0")
+  if(status1 == "0")
   {
     display.setCursor(65,54);
     display.println("INACTIVE");
   }
-  else if(status3 == "1")
+  else if(status1 == "1")
   {
     display.setCursor(65,54);
     display.println("ACTIVE");
@@ -205,7 +205,7 @@ void frameNode3()
   display.setTextSize(1); 
   display.setTextColor(BLACK,WHITE); 
   display.setCursor(15,3);
-  display.print("NODE 3");
+  display.print("THIS NODE");
   display.display();
 }
 void Screen3()
@@ -289,9 +289,9 @@ void screenChange()
 }
 void setScreen()
 {
-  Firebase.RTDB.setInt(&fbdo, F("/Node1/Online"), 1);
+  Firebase.RTDB.setInt(&fbdo, F("/Node1/Online"), 0);
   Firebase.RTDB.setInt(&fbdo, F("/Node2/Online"), 0);
-  Firebase.RTDB.setInt(&fbdo, F("/Node3/Online"), 0); 
+  Firebase.RTDB.setInt(&fbdo, F("/Node3/Online"), 1); 
   switch(page)
   {
     case 1: 
